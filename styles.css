@@ -2,12 +2,19 @@
     background: lightgrey
 }
 
+#main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    padding: 10px;
 }
 
 .poke-card {
@@ -37,7 +44,7 @@
 }
 
 .img-wrapper img {
-    max-width: 250px;
+    width: 200px;
     height: 150px;
 }
 
