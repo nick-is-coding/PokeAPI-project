@@ -2,6 +2,24 @@
     background: lightgrey
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .favorites {
+    padding: 30px 20px;
+}
+
+.navbar .favorites a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar .poke-title {
+    padding: 10px 20px;
+}
+
 #main-container {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +45,8 @@
     border: 1px solid black;
     border-radius: 2rem;
     background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD);
-    
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .poke-content {
@@ -36,6 +55,17 @@
 
 .poke-name {
     padding: 20px 0;
+}
+
+.poke-name span {
+    position: relative;
+    top: 15px;
+}
+
+.heart-shape {
+    top: -25px;
+    right: -105px;
+    position: relative;
 }
 
 .img-wrapper {

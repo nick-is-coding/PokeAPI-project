@@ -9,7 +9,7 @@ let num = 0;
 let catchPokemon = () => {
     let counter = 0;
     while(counter < 30) {
-        let id = Math.floor(Math.random() * 150) + 1;
+        let id = Math.floor(Math.random() * 550) + 1;
         const finalURL = pokemon + id;
         
         fetch(finalURL)
@@ -44,6 +44,7 @@ let generateCard = () => {
                         <div class="poke-name">
                             <span>${pokeStorage[num].pokeName}</span>
                         </div>
+                        <div class="heart-shape empty"><button><i class="fa-regular fa-heart"></i></button></div>
                         <div class="img-wrapper">
                             <img src=${pokeStorage[num].imgSrc} alt="">
                         </div>
@@ -70,3 +71,4 @@ let generateCard = () => {
 };
 
 catchPokemon();
+
