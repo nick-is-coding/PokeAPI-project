@@ -17,6 +17,7 @@ let catchPokemon = () => {
             .then((data) => {
                 // console.log(data);
                 storePokemon(data);
+                console.log(data);
             });
         counter ++;}
     };
@@ -39,12 +40,11 @@ console.log(pokeStorage);
 let generateCard = () => {
         document.getElementById("main-container").insertAdjacentHTML("beforeend",
             `<div class="container">
-                <div class="poke-card" id=card>
+                <div class="poke-card" id=${pokeStorage[num].pokeID}>
                     <div class="poke-content">
                         <div class="poke-name">
                             <span>${pokeStorage[num].pokeName}</span>
                         </div>
-                        <div class="heart-shape empty"><button><i class="fa-regular fa-heart"></i></button></div>
                         <div class="img-wrapper">
                             <img src=${pokeStorage[num].imgSrc} alt="">
                         </div>
@@ -63,6 +63,7 @@ let generateCard = () => {
                                     <span class="replace3">${pokeStorage[num].attackStat}</span>
                                 </li>
                             </ul> 
+                            <div class="heart-shape empty"><button>ADD TO TEAM</button></div>
                         </div>
                     </div>
                 </div>
@@ -71,4 +72,3 @@ let generateCard = () => {
 };
 
 catchPokemon();
-

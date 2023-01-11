@@ -7,13 +7,14 @@
     justify-content: space-between;
 }
 
-.navbar .favorites {
-    padding: 30px 20px;
+.poke-header {
+   display: flex;
 }
 
-.navbar .favorites a {
-    text-decoration: none;
-    font-size: 20px;
+.poke-header .nav-item {
+    padding: 1rem;
+    list-style: none;
+    cursor: pointer;
 }
 
 .navbar .poke-title {
@@ -36,7 +37,7 @@
 }
 
 .poke-card {
-    height: 400px;
+    height: 480px;
     max-width: 400px;
     text-align: center;
     display: flex;
@@ -59,13 +60,15 @@
 
 .poke-name span {
     position: relative;
-    top: 15px;
 }
 
-.heart-shape {
-    top: -25px;
-    right: -105px;
-    position: relative;
+.heart-shape button {
+        border-radius: 1rem;
+        background: blanchedalmond;
+        border: 1px solid lightgray;
+        height: 30px;
+        position: relative;
+        left: 4px;
 }
 
 .img-wrapper {
@@ -98,4 +101,45 @@
 .stats .stat-attack {
     display: flex;
     justify-content: space-between;
+}
+
+/* .hidden {
+    opacity: 0;
+} */
+
+.favorites-page {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 3rem;
+    transition: all 0.35s ease-in;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.my-favorites {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favorites-page.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+[data-animation="zoomInOut"].favorites-page {
+    transform: scale(0.2);
+}
+
+[data-animation="zoomInOut"].favorites-page.is-visible {
+    transform: none;
 }
