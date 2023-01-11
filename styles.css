@@ -118,6 +118,8 @@
     transition: all 0.35s ease-in;
     visibility: hidden;
     opacity: 0;
+    max-height: calc(200vh - 210px);
+    overflow-y: auto;
 }
 
 .fav-top {
@@ -126,9 +128,11 @@
     justify-content: space-between;
 }
 
-.my-favorites {
+#my-favorites {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .favorites-page.is-visible {

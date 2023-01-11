@@ -16,4 +16,4 @@ for(const elm of closeModal) {
     elm.addEventListener('click', function() {
         this.parentElement.parentElement.parentElement.classList.remove(isVisible);
     })
-}
+};

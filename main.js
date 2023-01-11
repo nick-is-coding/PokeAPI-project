@@ -6,6 +6,7 @@ let pokeFavorites = [];
 let counter = 0;
 let num = 0;
 
+
 let catchPokemon = () => {
     let counter = 0;
     while(counter < 30) {
@@ -15,9 +16,7 @@ let catchPokemon = () => {
         fetch(finalURL)
             .then((response) => response.json())
             .then((data) => {
-                // console.log(data);
                 storePokemon(data);
-                console.log(data);
             });
         counter ++;}
     };
@@ -39,7 +38,7 @@ console.log(pokeStorage);
 
 let generateCard = () => {
         document.getElementById("main-container").insertAdjacentHTML("beforeend",
-            `<div class="container">
+            `<div id="blockToMove-${pokeStorage[num].pokeID}" class="container">
                 <div class="poke-card" id=${pokeStorage[num].pokeID}>
                     <div class="poke-content">
                         <div class="poke-name">
@@ -63,12 +62,22 @@ let generateCard = () => {
                                     <span class="replace3">${pokeStorage[num].attackStat}</span>
                                 </li>
                             </ul> 
-                            <div class="heart-shape empty"><button>ADD TO TEAM</button></div>
+                            <div class="heart-shape empty">
+                                <button id="move-button-${pokeStorage[num].pokeID}">ADD TO TEAM</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>`)
-    num++;
+            </div>`
+            );
+            const moveButton = document.getElementById(`move-button-${pokeStorage[num].pokeID}`);
+            const container2 = document.getElementById('my-favorites');
+            const blockToMove = document.getElementById(`blockToMove-${pokeStorage[num].pokeID}`);
+            moveButton.addEventListener("click", () => {
+                console.log("Button was clicked");
+                container2.appendChild(blockToMove);
+            });
+        num++;
 };
 
 catchPokemon();
