@@ -36,6 +36,31 @@ let storePokemon = (data) => {
 
 console.log(pokeStorage);
 
+let buttonFunctionality = () => {
+    const moveButton = document.getElementById(`move-button-${pokeStorage[num].pokeID}`);
+    const container2 = document.getElementById('my-favorites');
+    const blockToMove = document.getElementById(`blockToMove-${pokeStorage[num].pokeID}`);
+    const addText = 'ADD TO TEAM';
+    const removeText = 'REMOVE FROM TEAM';
+    let cardState = 'not-favorite';
+
+    moveButton.addEventListener("click", () => {
+        if (cardState === "not-favorite") {
+            moveButton.setAttribute("data-state", "favorite");
+            moveButton.textContent = removeText;
+            container2.appendChild(blockToMove);
+            console.log("Adding card to favorites list.");
+            cardState = "favorite";
+        } else {
+            moveButton.removeAttribute("data-state", "favorite");
+            moveButton.textContent = addText;
+            mainContainer.appendChild(blockToMove);
+            console.log("Removing card from favorites list.");
+            cardState = "not-favorite";
+        }
+    });
+};
+
 let generateCard = () => {
         document.getElementById("main-container").insertAdjacentHTML("beforeend",
             `<div id="blockToMove-${pokeStorage[num].pokeID}" class="container">
@@ -63,20 +88,14 @@ let generateCard = () => {
                                 </li>
                             </ul> 
                             <div class="heart-shape empty">
-                                <button id="move-button-${pokeStorage[num].pokeID}">ADD TO TEAM</button>
+                                <button id="move-button-${pokeStorage[num].pokeID}" class="fave-button">ADD TO TEAM</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>`
             );
-            const moveButton = document.getElementById(`move-button-${pokeStorage[num].pokeID}`);
-            const container2 = document.getElementById('my-favorites');
-            const blockToMove = document.getElementById(`blockToMove-${pokeStorage[num].pokeID}`);
-            moveButton.addEventListener("click", () => {
-                console.log("Button was clicked");
-                container2.appendChild(blockToMove);
-            });
+        buttonFunctionality();
         num++;
 };
 
