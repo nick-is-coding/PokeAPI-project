@@ -21,7 +21,7 @@
     padding: 10px 20px;
 }
 
-#main-container {
+#original-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
