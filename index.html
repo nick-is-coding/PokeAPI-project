@@ -8,36 +8,42 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>PokePicker</title>
+    <title>pokePicker</title>
 
 </head>
 <body>
     
 <nav class="navbar">
-    <h1 class="poke-title">PokePicker</h1>
+    <h1 class="poke-title">pokePicker</h1>
     <ul class="poke-header">
-        <li class="nav-item" data-open="fave">MY TEAM</li>
-        <li class="nav-item" data-open="additional">ADDITIONAL DATA</li>
+        <li class="nav-item" data-open="fave">my team</li>
     </ul>
 </nav>
 
     <div class="poke-sort">
-        <button id="sort-button" onclick="runSort()">SORT A-Z</button>
+        <button id="sort-button" onclick="runSort()">press to sort</button>
     </div>
 
     <div id="main-container" class="main-container">
-        <!-- generated code will go here -->
         <div id="original-container">
         </div>
 
         <div id="fave" class="favorites-page page-block" data-animation="zoomInOut">
             <div class="fav-container">
                 <div class="fav-top">
-                    <h1>MY TEAM</h1>
+                    <h1>my team</h1>
                     <i class="fas fa-times" data-close></i>
                 </div>
-                <div>
-                    <h2>TOTAL HEALTH POINTS</h2>
+                <div class="total-text">
+                    <div class="health">
+                        <h2>total health pts.</h2><span id="hp-sum"></span>
+                    </div>
+                    <div class="attack">
+                        <h2>total attack pts.</h2><span id="attack-sum"></span>
+                    </div>
+                </div>
+                <div class="poke-sort">
+                    <button id="sort-fave" onclick="sortFaves()">press to sort</button>
                 </div>
                 <div id="my-favorites">
                 

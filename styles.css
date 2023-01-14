@@ -1,24 +1,78 @@
 :root {
-    background: lightgrey
+    background-color: #66533b;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
+
+#fave {
+    background-color: #666057;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
+
+:root, #fave {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
+    margin: 50px 50px;
 }
 
 .poke-header {
    display: flex;
 }
 
+.poke-header .nav-item, .fav-top h1, .total-text h2, .total-text span {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
 .poke-header .nav-item {
     padding: 1rem;
     list-style: none;
     cursor: pointer;
+    font-size: 20px;
 }
+
+button {
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    font-family: 'Courier New', Courier, monospace;
+    background: whitesmoke;
+    border-radius: 1.5rem;
+    background-color: whitesmoke;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    border: 0 solid #e2e8f0;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.heart-shape button {
+    font-size: 1rem;
+    background: indianred;
+    color: white;
+}
+
 
 .navbar .poke-title {
     padding: 10px 20px;
+    color: whitesmoke;
+    font-size: 30px;
+}
+
+div.poke-sort {
+    display: flex;
+    justify-content: center;
 }
 
 #original-container {
@@ -45,7 +99,7 @@
     align-items: center;
     border: 1px solid black;
     border-radius: 2rem;
-    background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD);
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
@@ -55,7 +109,9 @@
 }
 
 .poke-name {
-    padding: 20px 0;
+    padding: 20px 0px;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .poke-name span {
@@ -63,12 +119,8 @@
 }
 
 .heart-shape button {
-        border-radius: 1rem;
-        background: blanchedalmond;
-        border: 1px solid lightgray;
-        height: 30px;
-        position: relative;
-        left: 4px;
+    position: relative;
+    left: 4px;
 }
 
 .img-wrapper {
@@ -107,6 +159,10 @@
     opacity: 0;
 } */
 
+
+
+
+
 .favorites-page {
     position: fixed;
     top: 0;
@@ -138,6 +194,23 @@
 .favorites-page.is-visible {
     visibility: visible;
     opacity: 1;
+}
+
+.total-text {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.health, .attack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    border: solid 1px black;
+    background: indianred;
 }
 
 [data-animation="zoomInOut"].favorites-page {
