@@ -3,10 +3,11 @@ const mainContainer = document.getElementById("main-container");
 const originalContainer = document.getElementById("original-container");
 const favoriteContainer = document.getElementById("my-favorites");
 
-let sortToggle = document.getElementById("sort-button");
 let favToggle = document.getElementById("sort-fave");
 let theSum = document.getElementById("hp-sum");
 let theAttack = document.getElementById("attack-sum");
+
+let sortToggle = document.getElementById("sort-button");
 
 let pokeStorage = [];
 let favoriteStorage = [];
@@ -153,43 +154,6 @@ let runSort = () => {
             let card = document.getElementById(`blockToMove-${poke.pokeID}`);
             card.getElementsByClassName("poke-name")[0].textContent = poke.pokeName;
             originalContainer.appendChild(card);
-        });
-};
-
-let sortFaves = () => {
-        num = 0;
-        favoriteStorage.sort((pokeA, pokeB) => {
-            let nameA = pokeA.pokeName.toLowerCase();
-            let nameB = pokeB.pokeName.toLowerCase();
-            if (isAscending) {
-                if (nameA < nameB) {
-                    return -1;
-                } else if (nameA > nameB) {
-                    return 1;
-                }
-                return 0;
-            } else {
-                if (nameA > nameB) {
-                    return -1;
-                } else if (nameA < nameB) {
-                    return 1;
-                }
-                return 0;
-            }
-        });
-
-        isAscending = !isAscending;
-
-        if(isAscending) {
-            favToggle.innerHTML = "sort a-z";
-        } else {
-            favToggle.innerHTML = "sort z-a";
-        }
-
-        favoriteStorage.forEach((poke, index) => {
-            let card = document.getElementById(`blockToMove-${poke.pokeID}`);
-            card.getElementsByClassName("poke-name")[0].textContent = poke.pokeName;
-            favoriteContainer.appendChild(card);
         });
 };
 
